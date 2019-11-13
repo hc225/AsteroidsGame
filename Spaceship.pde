@@ -2,7 +2,7 @@ class Spaceship extends Floater
 {   
     public Spaceship()
     {
-    	corners = 3;
+    	corners = 4;
     	int[] xS = {-8,16,-8,-2};
     	int[] yS = {-8,0,8,0};
     	xCorners = xS;
@@ -13,6 +13,5 @@ class Spaceship extends Floater
     	myDirectionX = 0;
     	myDirectionY = 0;
     }
-    public void 
-    public int
+
 }

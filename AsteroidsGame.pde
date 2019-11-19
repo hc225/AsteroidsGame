@@ -1,4 +1,5 @@
 Spaceship ship;
+Asteroid rock = new Asteroid();
 Star[] stars = new Star[600];
 public void setup() 
 {
@@ -9,11 +10,14 @@ public void setup()
 }
 public void draw() 
 {
-	background(0);
+	background(255);
 	for(int i = 0; i < stars.length; i++)
 		stars[i].show();
 	ship.move();
 	ship.show();
+	rock.move();
+	rock.accelerate(.5);
+	rock.show();
 }
 public void keyPressed()
 {

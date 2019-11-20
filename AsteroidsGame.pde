@@ -15,8 +15,7 @@ public void draw()
 		stars[i].show();
 	ship.move();
 	ship.show();
-	rock.move();
-	rock.accelerate(.5);
+
 	rock.show();
 }
 public void keyPressed()

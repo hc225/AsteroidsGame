@@ -5,8 +5,8 @@ class Asteroid extends Floater
 	{
 		rotationSpeed = (int)(Math.random()*40)-20;
 		corners = 8;
-		int[] xS = {-9,-1,7,13,9,6,-10,-12};
-    	int[] yS = {-7,-9,-9,0,5,10,8,0};
+		int[] xS = {-9,-1,7,10,13,8,-7,-10,-12};
+    	int[] yS = {-7,-10,-8,-4,0,10,13,8,0};
     	xCorners = xS;
     	yCorners = yS;
     	myColor = color(255,0,0);

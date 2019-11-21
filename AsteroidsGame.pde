@@ -1,6 +1,7 @@
 Spaceship ship;
 Asteroid rock = new Asteroid();
 Star[] stars = new Star[600];
+private int counter;
 public void setup() 
 {
 	size(600,600);
@@ -10,12 +11,12 @@ public void setup()
 }
 public void draw() 
 {
-	background(255);
+	background(0);
 	for(int i = 0; i < stars.length; i++)
 		stars[i].show();
 	ship.move();
 	ship.show();
-
+	rock.move();
 	rock.show();
 }
 public void keyPressed()
@@ -29,3 +30,4 @@ public void keyPressed()
 	if(key == 'h')
 		ship.Hyperspace();
 }
+//public void keyReleased(){}

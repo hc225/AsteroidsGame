@@ -1,6 +1,7 @@
 Spaceship ship;
-Asteroid rock = new Asteroid();
+ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 Star[] stars = new Star[600];
+float d = dist(rocks.get(i).getCenterX(),rocks.get(i).getCenterY(),ship.getCenterX(),ship.getCenterY()
 private int counter;
 public void setup() 
 {
@@ -8,6 +9,8 @@ public void setup()
 	ship = new Spaceship();
 	for(int i = 0; i < stars.length; i++)
 		stars[i] = new Star();
+	for(int i = 0; i < 7; i++)
+		rocks.add(new Asteroid());
 }
 public void draw() 
 {
@@ -16,8 +19,19 @@ public void draw()
 		stars[i].show();
 	ship.move();
 	ship.show();
-	rock.move();
-	rock.show();
+	for(int i = 0; i < 7; i++)
+	{
+		rocks.get(i).move();
+		rocks.get(i).show();
+	}
+	for(int i = 0; i < 7; i++)
+		if(d <= 13)
+		{
+			rocks.remove(i);
+			i--;
+		}
+
+
 }
 public void keyPressed()
 {

@@ -30,7 +30,7 @@ public void draw()
 	}
     //spaceship moves while key is held	
 	if(kUp == true)
-		ship.accelerate(0.5);
+		ship.accelerate(0.025);
 	if(kLeft == true)
 		ship.turn(-3);
 	if(kRight == true)

@@ -1,10 +1,12 @@
 Spaceship ship;
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 Star[] stars = new Star[600];
-boolean keyUp, keyLeft, keyRight;
-private int counter;
+boolean kUp, kLeft, kRight;
 public void setup() 
 {
+	kUp = false;
+	kLeft = false;
+	kRight = false;
 	size(600,600);
 	ship = new Spaceship();
 	for(int i = 0; i < stars.length; i++)
@@ -22,35 +24,35 @@ public void draw()
 	for(int i = 0; i < rocks.size(); i++)
 	{
 		rocks.get(i).move();
-		rocks.get(i).show();
-		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 13)
-		{
+		rocks.get(i).show();	
+		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 15)
 			rocks.remove(i);
-			i--;
-		}		
 	}
-	
+    //spaceship moves while key is held	
+	if(kUp == true)
+		ship.accelerate(0.1);
+	if(kLeft == true)
+		ship.turn(-3);
+	if(kRight == true)
+		ship.turn(3);
 }
 public void keyPressed()
 {
 	if(keyCode == UP)
-		keyUp = true;
-		ship.accelerate(0.2);
+		kUp = true;
 	if(keyCode == LEFT)
-		keyLeft = true;
-		ship.turn(-15);
+		kLeft = true;
 	if(keyCode == RIGHT)
-		keyRight = true;
-		ship.turn(15);
+		kRight = true;
 	if(key == 'h')
 		ship.Hyperspace();
 }
 public void keyReleased()
 {
 	if(keyCode == UP)
-		keyUp = false;
+		kUp = false;
 	if(keyCode == LEFT)
-		keyLeft = false;
+		kLeft = false;
 	if(keyCode == RIGHT)
-		keyRight = false;
+		kRight = false;
 }

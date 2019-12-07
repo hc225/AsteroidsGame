@@ -11,7 +11,7 @@ public void setup()
 	ship = new Spaceship();
 	for(int i = 0; i < stars.length; i++)
 		stars[i] = new Star();
-	for(int i = 0; i < 7; i++)
+	for(int i = 0; i < 15; i++)
 		rocks.add(new Asteroid());
 }
 public void draw() 
@@ -25,12 +25,12 @@ public void draw()
 	{
 		rocks.get(i).move();
 		rocks.get(i).show();	
-		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 15)
+		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 20)
 			rocks.remove(i);
 	}
     //spaceship moves while key is held	
 	if(kUp == true)
-		ship.accelerate(0.1);
+		ship.accelerate(0.5);
 	if(kLeft == true)
 		ship.turn(-3);
 	if(kRight == true)

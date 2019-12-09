@@ -30,11 +30,11 @@ public void draw()
 	}
     //spaceship moves while key is held	
 	if(kUp == true)
-		ship.accelerate(0.025);
+		ship.accelerate(0.05);
 	if(kLeft == true)
-		ship.turn(-3);
+		ship.turn(-4);
 	if(kRight == true)
-		ship.turn(3);
+		ship.turn(4);
 }
 public void keyPressed()
 {

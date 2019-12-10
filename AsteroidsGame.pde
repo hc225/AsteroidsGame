@@ -1,14 +1,17 @@
 Spaceship ship;
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
+ArrayList <Bullet> shots = new ArrayList <Bullet>();
 Star[] stars = new Star[600];
-boolean kUp, kLeft, kRight;
+boolean kUp, kLeft, kRight, kShoot;
 public void setup() 
 {
 	kUp = false;
 	kLeft = false;
 	kRight = false;
+	kShoot = false;
 	size(600,600);
 	ship = new Spaceship();
+	//shots = new Bullet(ship);
 	for(int i = 0; i < stars.length; i++)
 		stars[i] = new Star();
 	for(int i = 0; i < 15; i++)
@@ -28,7 +31,10 @@ public void draw()
 		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 20)
 			rocks.remove(i);
 	}
-    //spaceship moves while key is held	
+    keyCheck();
+}
+public void keyCheck()
+{
 	if(kUp == true)
 		ship.accelerate(0.05);
 	if(kLeft == true)

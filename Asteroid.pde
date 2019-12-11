@@ -24,11 +24,8 @@ class Asteroid extends Floater
 		turn(rotationSpeed);
 		super.move();
 	}
-	public void setRotSpeed(int n){rotationSpeed = n;}
 	public int getRotSpeed(){return rotationSpeed;}
-	public void setX(double x){myCenterX = x;}
 	public double getX(){return myCenterX;}
-	public void setY(double y){myCenterY = y;}
 	public double getY(){return myCenterY;}
 
 }

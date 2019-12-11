@@ -11,7 +11,6 @@ public void setup()
 	kShoot = false;
 	size(600,600);
 	ship = new Spaceship();
-	//shots = new Bullet(ship);
 	for(int i = 0; i < stars.length; i++)
 		stars[i] = new Star();
 	for(int i = 0; i < 15; i++)
@@ -29,7 +28,12 @@ public void draw()
 		rocks.get(i).move();
 		rocks.get(i).show();	
 		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 20)
-			rocks.remove(i);
+			rocks.remove(i);			
+	}
+	for(int i = 0; i < shots.size(); i++)
+	{
+		shots.get(i).move();
+		shots.get(i).show();
 	}
     keyCheck();
 }
@@ -41,6 +45,8 @@ public void keyCheck()
 		ship.turn(-4);
 	if(kRight == true)
 		ship.turn(4);
+	if(kShoot == true)
+		shots.add(new Bullet(ship));
 }
 public void keyPressed()
 {
@@ -50,6 +56,8 @@ public void keyPressed()
 		kLeft = true;
 	if(keyCode == RIGHT)
 		kRight = true;
+	if(keyCode == 32)
+		kShoot = true;
 	if(key == 'h')
 		ship.Hyperspace();
 }
@@ -61,4 +69,6 @@ public void keyReleased()
 		kLeft = false;
 	if(keyCode == RIGHT)
 		kRight = false;
+	if(keyCode == 32)
+		kShoot = false;
 }

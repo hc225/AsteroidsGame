@@ -10,11 +10,21 @@ class Bullet extends Floater
 		myDirectionX = 5*Math.cos(dRadians) + ship.getDirectionX();
 		myDirectionY = 5*Math.sin(dRadians) + ship.getDirectionY();
 		myColor = color(255,0,0);
+		accelerate(5);
+	}
+	public void move()
+	{
+    myCenterX += myDirectionX;    
+    myCenterY += myDirectionY; 	
 	}
 	public void show()
 	{
 		fill(myColor);
 		stroke(myColor);
-		ellipse((float)myCenterX,(float)myCenterY,(float)4,(float)4);
+		ellipse((float)myCenterX,(float)myCenterY,(float)2,(float)10);
+
 	}
+	public double getX(){return myCenterX;}
+	public double getY(){return myCenterY;}
+
 }

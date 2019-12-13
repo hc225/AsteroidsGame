@@ -23,8 +23,14 @@ class Spaceship extends Floater
     	myCenterY = Math.random()*580;
     }
     public double getPointDirection(){return myPointDirection;}
+    public void setPointDirection(double d){myPointDirection = d;}
     public double getX(){return myCenterX;} 
+    public void setX(double x){myCenterX = x;}
     public double getY(){return myCenterY;}
+    public void setY(double y){myCenterY = y;}
     public double getDirectionX(){return myDirectionX;}
+    public void setDirectionX(double xSpeed){myDirectionX = xSpeed;}
     public double getDirectionY(){return myDirectionY;}
+    public void setDirectionY(double ySpeed){myDirectionY = ySpeed;}
+
 }

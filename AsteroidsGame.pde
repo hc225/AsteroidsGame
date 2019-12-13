@@ -104,4 +104,27 @@ public void gameReset()
 	textSize(32);
 	fill(255,0,0);
 	text("Game Over",300-96,300);
+	ship.setX(300);
+	ship.setY(300);
+	ship.setPointDirection(270);
+	ship.setDirectionX(0);
+	ship.setDirectionY(0);
+	for(int i = 0; i < rocks.size(); i++)
+	{
+		rocks.get(i).setX(Math.random()*600+10);
+		rocks.get(i).setY(Math.random()*600+10);
+		rocks.get(i).setPointDirection(Math.random()*360);
+		rocks.get(i).setRotSpeed((int)(Math.random()*15)-7);
+		rocks.get(i).accelerate(Math.random()*3+1);
+		rocks.get(i).setDirectionX(0);
+		rocks.get(i).setDirectionY(0);
+		rocks.get(i).accelerate(Math.random()*3+1);
+	}
+	for(int i = rocks.size(); i < 15; i++ )
+		rocks.add(new Asteroid());
+	for(int i = 0; i < shots.size(); i++)
+	{
+		shots.remove(i);
+		i--;
+	}	
 }

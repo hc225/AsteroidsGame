@@ -40,7 +40,7 @@ public void draw()
 public void collisionCheck()
 {
 	for(int i = 0; i < rocks.size(); i++)	
-		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 20)
+		if(dist((float)rocks.get(i).getX(),(float)rocks.get(i).getY(),(float)ship.getX(),(float)ship.getY()) <= 25)
 		{
 			rocks.remove(i);
 			gameReset();		
@@ -48,7 +48,7 @@ public void collisionCheck()
 	for(int i = 0; i < shots.size(); i++)
 	{
 		for(int n = 0; n < rocks.size(); n++)
-			if(dist((float)rocks.get(n).getX(),(float)rocks.get(n).getY(),(float)shots.get(i).getX(),(float)shots.get(i).getY()) <= 20)
+			if(dist((float)rocks.get(n).getX(),(float)rocks.get(n).getY(),(float)shots.get(i).getX(),(float)shots.get(i).getY()) <= 15)
 			{
 				rocks.remove(n);
 				shots.remove(i);
@@ -120,11 +120,12 @@ public void gameReset()
 		rocks.get(i).setDirectionY(0);
 		rocks.get(i).accelerate(Math.random()*3+1);
 	}
+
 	for(int i = rocks.size(); i < 15; i++ )
 		rocks.add(new Asteroid());
 	for(int i = 0; i < shots.size(); i++)
 	{
 		shots.remove(i);
-		i--;
+		
 	}	
 }
